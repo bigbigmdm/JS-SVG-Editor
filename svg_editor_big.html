@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>SVG редактор схем</title>
+  <script src="svg_big.js"></script>
+   <link rel="stylesheet" type="text/css" href="draw.css">
+  
+ </head>
+ <body onmousemove="mouseCoords(event)">
+  <div id="all">
+    <div id= "left">
+       <div id="main_sch" onclick="drawLine()">
+       <svg id ="svg_root" width="600" height="400" viewBox="0 0 600 400" version="1.1" xmlns="http://www.w3.org/2000/svg">
+       <style>
+       .sall{stroke:#333;fill:#fff;stroke-width:4;stroke-linejoin:round;stroke-linecap:round;}
+       .snof{stroke:#333;fill:none;stroke-width:4;stroke-linejoin:round;stroke-linecap:round;}
+       .sgnd{stroke:#333;fill:#fff;stroke-width:8;stroke-linejoin:round;stroke-linecap:round;}
+       </style>
+       <path d="M0 0h10v400h10v-400h10v400h10v-400h10v400h10v-400h10v400h10v-400h10v400h10v-400h10v400h10v-400h10v400h10v-400h10v400h10v-400h10v400h10v-400h10v400h10v-400h10v400h10v-400h10v400h10v-400h10v400h10v-400h10v400h10v-400h10v400h10v-400h10v400h10v-400h10v400h10v-400h10v400h10v-400h10v400h10v-400h10v400h10v-400h10v400h10v-400h10v400h10v-400h10v400h10v-400h10v400h10v-400h10v400h10v-400h10v400h10v-400h10v400h10v-400h10v400h10v-400h10v400h10v-400h10v400h10v-400h-600v10h600v10h-600v10h600v10h-600v10h600v10h-600v10h600v10h-600v10h600v10h-600v10h600v10h-600v10h600v10h-600v10h600v10h-600v10h600v10h-600v10h600v10h-600v10h600v10h-600v10h600v10h-600v10h600v10h-600v10h600v10h-600v10h600v10h-600v10h600v10h-600v10h600v10h-600v10h600v10h-600v10h600v10h-600v10h600v10h-600v10h600v10h-600v10h600v10h-600v10h600v10h-600v10h600v10h-600v10" stroke="#0f0" stroke-width="1" fill="none"/>
+       <path d="M0 0h100v400h100v-400h100v400h100v-400h100v400h100v-400h-600v100h600v100h-600v100h600v100h-600v" stroke="#f8f" stroke-width="1" fill="none"/>
+       </svg>
+       </div>
+       <div id="middle">
+         <div id="setmod" class="mode" >*
+         <input type="checkbox" id="demo1" checked> 
+         <label for="demo1" data-on-label="Draw" data-off-label="Place"></label>
+         <input type="checkbox" id="demo2" checked> 
+         <label for="demo2" data-on-label="Line" data-off-label="Rect"></label>
+         </div>
+         <div id="coords" class="coor"></div>
+         <div id="stxt" class="txt" >
+         <input type="text" name="svgtext" size="21" id="svgtxt" class="svgt" value="OUT">
+         </div>
+         
+       </div>
+       <div id="txtarea">
+          <textarea id="preload" style="width:594px;" rows="8" maxlength="65535" ></textarea>
+       </div>
+      <div id="keys">
+        <div class="form_radio_btn">
+	        <input id="radio-1" type="radio" name="radio" checked>
+	        <label for="radio-1">RX</label>
+       </div>
+ 
+       <div class="form_radio_btn">
+	        <input id="radio-2" type="radio" name="radio">
+	        <label for="radio-2">RY</label>
+       </div>
+ 
+       <div class="form_radio_btn">
+	        <input id="radio-3" type="radio" name="radio">
+	        <label for="radio-3">CX</label>
+       </div>
+ 
+       <div class="form_radio_btn">
+	        <input id="radio-4" type="radio" name="radio">
+	        <label for="radio-4">CY</label>
+       </div>
+ 
+       <div class="form_radio_btn">
+	        <input id="radio-5" type="radio" name="radio">
+	        <label for="radio-5">GNO</label>
+       </div>
+       <br>
+       <div class="form_radio_btn">
+	        <input id="radio-6" type="radio" name="radio">
+	        <label for="radio-6">VDX</label>
+       </div>
+ 
+       <div class="form_radio_btn">
+	        <input id="radio-7" type="radio" name="radio">
+	        <label for="radio-7">VD-X</label>
+       </div>
+ 
+       <div class="form_radio_btn">
+	        <input id="radio-8" type="radio" name="radio">
+	        <label for="radio-8">VDY</label>
+       </div>
+ 
+       <div class="form_radio_btn">
+	        <input id="radio-9" type="radio" name="radio">
+	        <label for="radio-9">VD-Y</label>
+       </div>
+ 
+       <div class="form_radio_btn">
+	        <input id="radio-10" type="radio" name="radio">
+	        <label for="radio-10">PO</label>
+       </div>
+ 
+       <div class="form_radio_btn">
+	        <input id="radio-11" type="radio" name="radio">
+	        <label for="radio-11">LX</label>
+       </div>
+ 
+       <div class="form_radio_btn">
+	        <input id="radio-12" type="radio" name="radio">
+	        <label for="radio-12">LY</label>
+       </div>
+ 
+       <div class="form_radio_btn">
+	        <input id="radio-13" type="radio" name="radio">
+	        <label for="radio-13">ZEY</label>
+       </div>
+ 
+       <div class="form_radio_btn">
+	        <input id="radio-14" type="radio" name="radio">
+	        <label for="radio-14">SHOX</label>
+       </div>
+ 
+       <div class="form_radio_btn">
+	        <input id="radio-15" type="radio" name="radio">
+	        <label for="radio-15">GND</label>
+       </div>
+ 
+       <div class="form_radio_btn">
+	        <input id="radio-16" type="radio" name="radio">
+	        <label for="radio-16">SHOY</label>
+       </div>
+ 
+       <div class="form_radio_btn">
+	        <input id="radio-17" type="radio" name="radio">
+	        <label for="radio-17">MOSF</label>
+       </div>
+ 
+       <div class="form_radio_btn">
+	        <input id="radio-18" type="radio" name="radio">
+	        <label for="radio-18">LED-X</label>
+       </div>
+ 
+       <div class="form_radio_btn">
+	        <input id="radio-19" type="radio" name="radio">
+	        <label for="radio-19">CY+</label>
+       </div>
+ 
+       <div class="form_radio_btn">
+	        <input id="radio-20" type="radio" name="radio">
+	        <label for="radio-20">SHO-X</label>
+       </div>
+ 
+       <div class="form_radio_btn">
+	        <input id="radio-21" type="radio" name="radio">
+	        <label for="radio-21">LEDY</label>
+       </div>
+ 
+       <div class="form_radio_btn">
+	        <input id="radio-22" type="radio" name="radio">
+	        <label for="radio-22">TXT</label>
+       </div>
+ 
+       <div class="form_radio_btn">
+	        <input id="radio-23" type="radio" name="radio">
+	        <label for="radio-23">FILT</label>
+       </div>
+ 
+       <div class="form_radio_btn">
+	        <input id="radio-24" type="radio" name="radio">
+	        <label for="radio-24">N-P-N</label>
+       </div>
+      </div>
+    
+  </div>
+  <div id="right">
+     
+        <input class="btn" value="&nbsp;&nbsp;  Save  &nbsp;&nbsp;" type="button" onclick="fncSave()">     
+     <br>     
+        <input class="btn" value="&nbsp;&nbsp;  Undo  &nbsp;&nbsp;" type="button" onclick="fnUndo()">     
+     <br>     
+        <input class="btn" value="&nbsp;&nbsp; ◄Left &nbsp; &nbsp;" type="button" onclick="fnLeft()">
+     <br>     
+        <input class="btn" value="&nbsp;&nbsp; Right►&nbsp;&nbsp;" type="button" onclick="fnRight()">   
+     <br>     
+        <input class="btn" value="&nbsp;&nbsp; Delete&nbsp;&nbsp;" type="button" onclick="fnDelete()">    
+     
+  </div>
+</div>
+</body>
+</html>
