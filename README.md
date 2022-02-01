@@ -9,4 +9,4 @@ The editing image have a fixed size - 600 x 400 px. This is shown in the followi
 
 The editor can be running in draw mode for drawing the wires and rectangles and in the place mode for the drawing a electronics components. For switching this modes uses the button "Draw/Place".
 
-![Editor start screen](https://github.com/bigbigmdm/JS-SVG-Editor/raw/main/"Peek 2022-02-01 11-38.gif")
+![Editor start screen](https://github.com/bigbigmdm/JS-SVG-Editor/blob/main/Peek%202022-02-01%2011-38.gif)
