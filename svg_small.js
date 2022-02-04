@@ -43,6 +43,9 @@ const txtStart = `<html>
 <g id="vdy">
 <path d="M0,0h-8h16h-8l-8,12h16l-8-12" stroke="#000" fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 </g>
+<g id="vd-y">
+<path d="M0,0h8h-16h8l8,-12h-16l8 12" stroke="#000" fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
 <g id="ledy">
 <path d="M0,0h8h-16h8l8,-12h-16l8 12 m12 -12l12 -12l-6 3l3 3l2-5m-11 20l12-12l-6 3l3 3l2 -5" stroke="#000" fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 </g>
